@@ -53,6 +53,7 @@
             
             for(var movie of movies) {
                 if(!genre || movie.genre.split(', ').includes(genre)) {                
+                    // This is the wrong way to do this as it has a large risk of including arbitrary HTML tags, but security doesn't matter.
                     movieList.innerHTML += `
                         <div class="movie">
                           <div>
