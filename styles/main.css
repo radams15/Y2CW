@@ -7,6 +7,17 @@
   color: initial;
 }
 
+body {
+    background-color: #142132;
+}
+
+#login_box {
+    background-color: #fca311;
+    width: 40%;
+    margin: auto;
+    padding: 1em;
+}
+
 .movie {
   display: flex;
   padding: 10px;
@@ -54,7 +65,6 @@ body {
 }
 header,
 footer {
-  background: red;
   height: 5vh;
   color: white;
 }
