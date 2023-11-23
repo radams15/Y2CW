@@ -4,26 +4,30 @@
     <title>Movie Rentals</title>
   </head>
   <body>
-    <div id="main">
+    <div class="container-fluid" id="main">
+
 %include _navbar.html
 
-  <div id="sidebar">
-    Genres:
-    <ul>
-      <li><button onclick="layout()">All</button></li>
-      <li><button onclick="layout('Adventure')">Adventure</button></li>
-      <li><button onclick="layout('Animation')">Animation</button></li>
-      <li><button onclick="layout('Science fiction')">Science fiction</button></li>
-      <li><button onclick="layout('Comedy')">Comedy</button></li>
-      <li><button onclick="layout('Drama')">Drama</button></li>
-      <li><button onclick="layout('Horror')">Horror</button></li>
-      <li><button onclick="layout('Action')">Action</button></li>
-    </ul>
-  </div>
-      
-      <article id="movie_list">
-      
-      </article>
+      <div class="row">
+        <div id="sidebar" class="col-mg-2 col-sm-2">
+            <ul class="">
+              <li><button onclick="layout()">All</button></li>
+              <li><button onclick="layout('Adventure')">Adventure</button></li>
+              <li><button onclick="layout('Animation')">Animation</button></li>
+              <li><button onclick="layout('Science fiction')">Science fiction</button></li>
+              <li><button onclick="layout('Comedy')">Comedy</button></li>
+              <li><button onclick="layout('Drama')">Drama</button></li>
+              <li><button onclick="layout('Horror')">Horror</button></li>
+              <li><button onclick="layout('Action')">Action</button></li>
+            </ul>
+        </div>
+          
+        <div class="col-mg-2 col-sm-2">
+            <article id="movie_list">
+              
+            </article>
+        </div>
+      </div>
     </div>
 
     <script src="./js/movies.js"></script>

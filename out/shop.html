@@ -33,9 +33,11 @@
 
   <body>
 
-    <div id="main">
+    <div class="container-fluid" id="main">
 
- <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+
+ <nav class="navbar navbar-static-top navbar-expand-lg navbar-light bg-light">
 
     <div class="container-fluid ">
 
@@ -64,39 +66,45 @@
   </nav>
 
 
-  <div id="sidebar">
+      <div class="row">
 
-    Genres:
+        <div id="sidebar" class="col-mg-2 col-sm-2">
 
-    <ul>
+            <ul class="">
 
-      <li><button onclick="layout()">All</button></li>
+              <li><button onclick="layout()">All</button></li>
 
-      <li><button onclick="layout('Adventure')">Adventure</button></li>
+              <li><button onclick="layout('Adventure')">Adventure</button></li>
 
-      <li><button onclick="layout('Animation')">Animation</button></li>
+              <li><button onclick="layout('Animation')">Animation</button></li>
 
-      <li><button onclick="layout('Science fiction')">Science fiction</button></li>
+              <li><button onclick="layout('Science fiction')">Science fiction</button></li>
 
-      <li><button onclick="layout('Comedy')">Comedy</button></li>
+              <li><button onclick="layout('Comedy')">Comedy</button></li>
 
-      <li><button onclick="layout('Drama')">Drama</button></li>
+              <li><button onclick="layout('Drama')">Drama</button></li>
 
-      <li><button onclick="layout('Horror')">Horror</button></li>
+              <li><button onclick="layout('Horror')">Horror</button></li>
 
-      <li><button onclick="layout('Action')">Action</button></li>
+              <li><button onclick="layout('Action')">Action</button></li>
 
-    </ul>
+            </ul>
 
-  </div>
+        </div>
 
-      
+          
 
-      <article id="movie_list">
+        <div class="col-mg-2 col-sm-2">
 
-      
+            <article id="movie_list">
 
-      </article>
+              
+
+            </article>
+
+        </div>
+
+      </div>
 
     </div>
 
