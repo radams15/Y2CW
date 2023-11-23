@@ -94,7 +94,7 @@
 
           
 
-        <div class="col-mg-2 col-sm-2">
+        <div class="col-mg col-sm">
 
             <article id="movie_list">
 
@@ -132,35 +132,49 @@
 
                     movieList.innerHTML += `
 
-                        <div class="movie">
+                        <div class="container">
 
-                          <div>
+                          <div class="row">
 
-                            <img class ="image" src="${movie.image}" />
+                              <div class="col">
 
-                          </div>
+                                  <div>
 
-                          <div style="margin: 0 0.75em; width:60%;">
+                                    <img class ="image" src="${movie.image}" />
 
-                            <h4 style="margin: 0">${movie.name}</h4>
+                                  </div>
 
-                            <p>
+                              </div>
 
-                              ${movie.description}
 
-                            </p>
 
-                          </div>
+                              <div class="col">
 
-                          <div style="float: right;">
+                                  <div style="">
 
-                            <a href="/movie.html?id=${movie.id}">View Movie</a><br />
+                                    <h4 style="">${movie.name}</h4>
 
-                            <label>Days to rent:</label><br />
+                                    <p>
 
-                            <input id="days-to-rent-${movie.id}" value="3" /><br />
+                                      ${movie.description}
 
-                            <button style="width: 100px; height: 50px" onclick="addToBasket(${movie.id})">Add to Basket</button>
+                                    </p>
+
+                                  </div>
+
+                                  <div>
+
+                                    <a href="/movie.html?id=${movie.id}">View Movie</a><br />
+
+                                    <label>Days to rent:</label><br />
+
+                                    <input id="days-to-rent-${movie.id}" value="3" /><br />
+
+                                    <button class="btn btn-primary" onclick="addToBasket(${movie.id})">Add to Basket</button>
+
+                                  </div>
+
+                              </div>
 
                           </div>
 
