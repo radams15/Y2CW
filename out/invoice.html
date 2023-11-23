@@ -1,65 +1,178 @@
 <!DOCTYPE html>
 
+
+
 <html lang="en">
 
+
+
   <head>
-%include _head.html
+
+<meta charset="UTF-8" />
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<link href="/styles/main.css" rel="stylesheet" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+
+<link
+
+  href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&amp;display=swap"
+
+  rel="stylesheet"
+
+/>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <title>Movie Rentals</title>
+
   </head>
+
+
 
   <body>
 
+
+
     <div id="main">
-%include _navbar.html
+
+ <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+    <div class="container-fluid ">
+
+        <a class="navbar-brand" href="#">Movie Rentals</a>
+
+        <ul class="navbar-nav mr-auto">
+
+
+
+            <li class="nav-item">
+
+                <a class="nav-link"  href="/basket.html">Basket <i class="bi bi-basket"></i></a>
+
+            </li>
+
+            <li class="nav-item">
+
+                <a class="nav-link" href="/login.html">Log Out</a>
+
+            </li>
+
+        </ul>
+
+    </div>
+
+  </nav>
       <article>
+
+
 
         <h1>Viewing Invoice for Movie Rental</h1>
 
+
+
         <div id="payment-details">
 
+
+
           <p>
+
+
 
             <span id="payment-details-title"></span> <span id="payment-details-firstName"></span> <span id="payment-details-surname"></span>
 
+
+
           </p>
 
+
+
           <p>
+
+
 
             <span id="payment-details-addressNumber"></span> <span id="payment-details-addressStreet"></span>
 
+
+
             <span id="payment-details-addressPostcode"></span>
 
+
+
           </p>
+
+
 
           <p>
 
+
+
             <span id="payment-details-card"></span> <span id="payment-details-cardNumber"></span>
+
+
 
             <span id="payment-details-expiryMonth"></span>/<span id="payment-details-expiryYear"></span>
 
+
+
           </p>
+
+
 
           <br />
 
+
+
           <p>Paid <span id="total-price"></span></p>
+
+
 
         </div>
 
+
+
       </article>
 
+
+
     </div>
+
+
 
   </body>
 
 
 
+
+
+
+
   <script src="./js/movies.js"></script>
+
+
 
   <script>
 
+
+
     const container = document.getElementById("payment-details");
 
+
+
     const paymentDetails = JSON.parse(localStorage.getItem("paymentDetails"));
+
+
+
+
 
 
 
@@ -67,17 +180,35 @@
 
 
 
+
+
+
+
     let totalPrice = 0.0;
+
+
+
+
 
 
 
     // Get all the prices of the movie in the basket
 
+
+
     basket.forEach((basketItem) => {
+
+
 
       totalPrice += basketItem.price * basketItem.rentDays;
 
+
+
     });
+
+
+
+
 
 
 
@@ -85,35 +216,71 @@
 
 
 
+
+
+
+
     // Update the DOM with the payment details
+
+
 
     document.getElementById("payment-details-title").textContent = paymentDetails.title;
 
+
+
     document.getElementById("payment-details-firstName").textContent = paymentDetails.firstName;
+
+
 
     document.getElementById("payment-details-surname").textContent = paymentDetails.surname;
 
+
+
     document.getElementById("payment-details-addressNumber").textContent = paymentDetails.addressNumber;
+
+
 
     document.getElementById("payment-details-addressStreet").textContent = paymentDetails.addressStreet;
 
+
+
     document.getElementById("payment-details-addressPostcode").textContent = paymentDetails.addressPostcode;
+
+
 
     document.getElementById("payment-details-card").textContent = paymentDetails.card;
 
+
+
     document.getElementById("payment-details-cardNumber").textContent = paymentDetails.cardNumber;
+
+
 
     document.getElementById("payment-details-expiryMonth").textContent = paymentDetails.expiryMonth;
 
+
+
     document.getElementById("payment-details-expiryYear").textContent = paymentDetails.expiryYear;
+
+
 
     document.getElementById("total-price").textContent = totalPrice;
 
 
 
+
+
+
+
     localStorage.clear();
+
+
 
   </script>
 
+
+
 </html>
+
+
 
