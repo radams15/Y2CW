@@ -15,7 +15,7 @@ const movies = [
     description:
       "Shang-Chi, the master of unarmed weaponry based Kung Fu, is forced to confront his past after being drawn into the Ten Rings organization.",
     releaseDate: "03 Sep 2021",
-    image: "https://via.placeholder.com/150x150",
+        image: "https://media.muckrack.com/profile/images/14674631/profileimages14674631s.jpg.256x256_q100_crop-smart.jpg",
     price: 2.49,
   },
   {
@@ -28,7 +28,7 @@ const movies = [
     actors: "Iain Armitage, Will Brisbin, Ron Pardo",
     description: "Cute dog movie",
     releaseDate: "20 Aug 2021",
-    image: "https://via.placeholder.com/350x250",
+    image: "https://a.wattpad.com/useravatar/I_Am_Zuma.256.291349.jpg",
     price: 2.99,
   },
   {
@@ -42,7 +42,7 @@ const movies = [
     description:
       "A strange black entity from another world bonds with Peter Parker and causes inner turmoil as he contends with new villains, temptations, and revenge.",
     releaseDate: "04 May 2007",
-    image: "https://via.placeholder.com/250x250",
+      image: "https://p1.hiclipart.com/preview/472/600/846/spider-man-3-2007-folder-icon-spider-man-3-v2-logo2-256x256-png-clipart.jpg",
     price: 0.5,
   },
   {
@@ -56,7 +56,7 @@ const movies = [
     description:
       "Hoping to walk away with a massive fortune, a trio of thieves break into the house of a blind man who isn't as helpless as he seems.",
     releaseDate: "26 Aug 2016",
-    image: "https://via.placeholder.com/250x150",
+      image: "https://resizing.flixster.com/snD3Cd0EkIapNSg2knXRQCgfQcs=/300x300/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p19634584_v_v9_ai.jpg",
     price: 1.29,
   },
   {
@@ -70,7 +70,7 @@ const movies = [
     description:
       "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice.",
     releaseDate: "18 Jul 2008",
-    image: "https://via.placeholder.com/150x150",
+      image: "https://m.media-amazon.com/images/I/51HdtnAdGpL._UC256,256_CACC,256,256_.jpg",
     price: 2.99,
   },
   {
@@ -84,7 +84,7 @@ const movies = [
     description:
       "When a beautiful stranger leads computer hacker Neo to a forbidding underworld, he discovers the shocking truth--the life he knows is the elaborate deception of an evil cyber-intelligence.",
     releaseDate: "31 Mar 1999",
-    image: "https://via.placeholder.com/150x150",
+      image: "https://misterslimm.files.wordpress.com/2010/10/folder5.jpg?w=700",
     price: 1.79,
   },
   {
@@ -98,7 +98,7 @@ const movies = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vitae augue finibus, condimentum urna vel, facilisis dui. Proin est ligula, laoreet sit amet accumsan eget, aliquam ut lectus      ",
     releaseDate: "20 Aug 2021",
-    image: "https://via.placeholder.com/250x250",
+      image: "https://screenanarchy.com/assets/2021/06/DMONC_thumbnail.jpg",
     price: 0.49,
   },
   {
@@ -112,7 +112,7 @@ const movies = [
     description:
       "Charismatic rancher Phil Burbank inspires fear and awe in those around him. When his brother brings home a new wife and her son, Phil torments them until he finds himself exposed to the possibility of love.",
     releaseDate: "01 Dec 2021",
-    image: "https://via.placeholder.com/250x250",
+      image: "https://www.soundtracks.ir/uploads/posts/2021-12/1640451192_folder__1640451025_79_143_85_59.jpg",
     price: 1.79,
   },
   {
@@ -126,7 +126,7 @@ const movies = [
     description:
       "Peter Parker is beset with troubles in his failing personal life as he battles a brilliant scientist named Doctor Otto Octavius.",
     releaseDate: "30 Jun 2004",
-    image: "https://via.placeholder.com/250x150",
+      image: "https://m.media-amazon.com/images/I/71AtMcwzYPL._UC256,256_CACC,256,256_.jpg",
     price: 2.49,
   },
   {
@@ -139,7 +139,7 @@ const movies = [
     actors: "Jason Statham, Holt McCallany, Josh Hartnett",
     description: "New action movie out recently",
     releaseDate: "07 May 2021",
-    image: "https://via.placeholder.com/250x50",
+      image: "https://b.thumbs.redditmedia.com/4JF3ymDkMUadQMoPf7Bcn97uvCDDnunEmIaZXZ0GzPk.png",
     price: 0.49,
   },
 ];

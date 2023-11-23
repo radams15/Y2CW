@@ -6,9 +6,18 @@
   text-decoration: none;
   color: initial;
 }
+.image {
+  height: 250px;
+  width: 250px;
+  image-rendering: high-quality;
+}
 
 body {
     background-color: #142132;
+}
+
+#right_div {
+  float: right;
 }
 
 #login_box {
