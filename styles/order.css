@@ -1,0 +1,25 @@
+body {
+    background-color: #142132;
+}
+
+.card {
+    max-width: 800px;
+    margin: auto;
+    color: black;
+    border-radius: 25px;
+}
+
+.form-control {
+    color: black;
+    background-color: #fca311;
+    border-radius: 10px;
+    border-color: black;
+
+}
+
+.form-control:focus {
+    color: white;
+    background-color: #142132;
+    border: 2px solid #142132;
+    box-shadow: none;
+}

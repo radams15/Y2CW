@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Movie Rentals</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link href="/styles/main.css" rel="stylesheet" />
+    <link href="/styles/order.css" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -20,56 +20,70 @@
     </header>
     <div id="main">
       <article>
-        <h1 style="text-align: centre">Payment Details</h1>
-        <div style="background-color: lightgrey; width: 70%; margin: auto; padding: 2em">
-          <form method="GET" action="/invoice.html" onsubmit="storeData()">
-            <div class="form-group">
-              <span>Title:</span>
-              <input class="form-control" type="text" id="title" />
-              <span>First Name:</span>
-              <input class="form-control" type="text" id="firstName" />
-              <span>Surname:</span>
-              <input class="form-control" type="text" id="surname" />
+        <div class="container p-0">
+            <br/>
+            <h1 style="text-align: centre; color: white">Payment Details</h1>
+            <br/>
+            <div class="card px-4" style="background-color: #fca311; width: 70%; margin: auto; padding: 2em">
+              <form method="GET" action="/invoice.html" onsubmit="storeData()">
+                <div class="form-group row">
+                    <div class="col-6">
+                      <span>First Name:</span>
+                      <input class="form-control" type="text" id="firstName" />
+                    </div>
+                    <div class="col-6">
+                      <span>Surname:</span>
+                      <input class="form-control" type="text" id="surname" />
+                    </div>
+                </div>
+                <hr />
+                <div class="form-group">
+                  <span>Number:</span>
+                  <input class="form-control" type="text" id="addressNumber" />
+                  <span>Street:</span>
+                  <input class="form-control" type="text" id="addressStreet" />
+                  <span>Country:</span>
+                  <input class="form-control" type="text" id="addressCountry" />
+                </div>
+                <div class="form-group">
+                  <span>Postcode:</span>
+                  <input class="form-control" type="text" id="addressPostcode" />
+                  <span>City:</span>
+                  <input class="form-control" type="text" id="addressCity" />
+                </div>
+                <hr />
+                <div class="form-group">
+                  <span>Card Type:</span>
+                  <input type="radio" name="card" value="visa" id="visa" checked />
+                  <label for="visa">Visa</label>
+                  <input type="radio" name="card" value="solo" id="solo" />
+                  <label for="solo">Solo</label>
+                  <input type="radio" name="card" value="mastercard" id="mastercard" />
+                  <label for="mastercard">Mastercard</label>
+                  <input type="radio" name="card" value="switch" id="switch" />
+                  <label for="switch">Switch</label>
+                </div>
+                <div class="form-group"></div>
+                    <span>Card Number:</span>
+                    <input class="form-control" type="text" id="cardNumber"/>
+                    <div class="row">
+                        <div class="col-6">
+                            <span>Expiry Date:</span>
+                            <input class="form-control" type="text" id="expiryMonth" />
+                        </div>
+                        <div class="col-6">
+                            <span>CVV Code:</span>
+                            <input class="form-control" type="text" id="expiryYear"/>
+                        </div>
+                    </div>
+                  <br/>
+                <div>
+                <div class="form-group"
+                  <button class="btn btn-secondary" type="button" onclick="window.location.href='/shop.html'">Cancel</a>
+                  <button class="btn" style="background-color:#142132; color:white" type="submit">Proceed</button>
+                </div>
+              </form>
             </div>
-            <hr />
-            <div class="form-group">
-              <span>Number:</span>
-              <input class="form-control" type="text" id="addressNumber" />
-              <span>Street:</span>
-              <input class="form-control" type="text" id="addressStreet" />
-              <span>Country:</span>
-              <input class="form-control" type="text" id="addressCountry" />
-            </div>
-            <div class="form-group">
-              <span>Postcode:</span>
-              <input class="form-control" type="text" id="addressPostcode" />
-              <span>City:</span>
-              <input class="form-control" type="text" id="addressCity" />
-            </div>
-            <hr />
-            <div class="form-group">
-              <span>Card Type:</span>
-              <input type="radio" name="card" value="visa" id="visa" checked />
-              <label for="visa">Visa</label>
-              <input type="radio" name="card" value="solo" id="solo" />
-              <label for="solo">Solo</label>
-              <input type="radio" name="card" value="mastercard" id="mastercard" />
-              <label for="mastercard">Mastercard</label>
-              <input type="radio" name="card" value="switch" id="switch" />
-              <label for="switch">Switch</label>
-            </div>
-            <div class="form-group"></div>
-              <span>Card Number:</span>
-              <input class="form-control" type="text" id="cardNumber"/>
-              <span>Expiry Date:</span>
-              <input class="form-control" type="text" id="expiryMonth" />
-              <span>CVV Code:</span>
-              <input class="form-control" type="text" id="expiryYear"/>
-            <div>
-              <button class="btn btn-secondary" type="button" onclick="window.location.href='/shop.html'">Cancel</a>
-              <button class="btn btn-primary" type="submit">Proceed</button>
-            </div>
-          </form>
         </div>
       </article>
     </div>
