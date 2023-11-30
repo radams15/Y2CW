@@ -41,7 +41,7 @@
                 if(!genre || movie.genre.split(', ').includes(genre)) {                
                     // This is the wrong way to do this as it has a large risk of including arbitrary HTML tags, but security doesn't matter.
                     movieList.innerHTML += `
-                        <div class="container">
+                        <div class="container movie-row">
                           <div class="row">
                               <div class="col">
                                   <div>
@@ -50,17 +50,18 @@
                               </div>
 
                               <div class="col">
-                                  <div style="">
-                                    <h4 style="">${movie.name}</h4>
+                                  <div>
+                                    <h4>${movie.name}</h4>
                                     <p>
                                       ${movie.description}
                                     </p>
                                   </div>
                                   <div>
-                                    <a href="/movie.html?id=${movie.id}">View Movie</a><br />
-                                    <label>Days to rent:</label><br />
-                                    <input id="days-to-rent-${movie.id}" value="3" /><br />
-                                    <button class="btn btn-primary" onclick="addToBasket(${movie.id})">Add to Basket</button>
+                                    <a class="btn btn-primary" href="/movie.html?id=${movie.id}">More Info</a><br />
+                                    <br>
+                                    <label>Days to rent:</label>
+                                    <input id="days-to-rent-${movie.id}" value="3" /><br><br>
+                                    <button class="btn btn-danger" onclick="addToBasket(${movie.id})">Add to Basket</button>
                                   </div>
                               </div>
                           </div>

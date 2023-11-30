@@ -132,7 +132,7 @@
 
                     movieList.innerHTML += `
 
-                        <div class="container">
+                        <div class="container movie-row">
 
                           <div class="row">
 
@@ -150,9 +150,9 @@
 
                               <div class="col">
 
-                                  <div style="">
+                                  <div>
 
-                                    <h4 style="">${movie.name}</h4>
+                                    <h4>${movie.name}</h4>
 
                                     <p>
 
@@ -164,13 +164,15 @@
 
                                   <div>
 
-                                    <a href="/movie.html?id=${movie.id}">View Movie</a><br />
+                                    <a class="btn btn-primary" href="/movie.html?id=${movie.id}">More Info</a><br />
 
-                                    <label>Days to rent:</label><br />
+                                    <br>
 
-                                    <input id="days-to-rent-${movie.id}" value="3" /><br />
+                                    <label>Days to rent:</label>
 
-                                    <button class="btn btn-primary" onclick="addToBasket(${movie.id})">Add to Basket</button>
+                                    <input id="days-to-rent-${movie.id}" value="3" /><br><br>
+
+                                    <button class="btn btn-danger" onclick="addToBasket(${movie.id})">Add to Basket</button>
 
                                   </div>
 
