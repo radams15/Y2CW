@@ -31,14 +31,11 @@
 
               </table>
 
-
               <hr />
 
               <a class="btn btn-secondary" href="/shop.html">Continue Shopping</a>
 
               <button class="btn btn-danger" onclick="localStorage.setItem('basket', '[]');">Clear Basket</button>
-
-
             </div>
         </div>
 
@@ -49,8 +46,10 @@
             <tbody id="total"></tbody>
 
           </table>
-          <div style="text-align: right"><strong>Total Price:</strong> £<span id="total-price"></span></div>
-          <a class="btn btn-primary" style="width: 100%" href="/order.html">Pay</a>
+          <div>
+              <div style="text-align: right"><strong>Total Price:</strong> £<span id="total-price"></span></div>
+              <a class="btn btn-primary" style="width: 100%" href="/order.html">Pay</a>
+          </div>
         </div>
 
       </div>
