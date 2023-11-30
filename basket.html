@@ -9,54 +9,51 @@
   <body>
 
     <header>
+%include _head.html
 
       <strong>Movie Rentals</strong>
 
     </header>
 
-    <div id="main">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-8">
+            <h1 style="text-align: center">Basket</h1>
 
-      <article>
+            <div>
+            <table style="width: 100%">
+                <tr>
+                    <th> Details </th>
+                    <th> Quantity </th>
+                    <th> Price </th>
+                </tr>
+                <tbody id="basket"></tbody>
 
-        <h1 style="text-align: center">Basket</h1>
+              </table>
 
-        <div style="background-color: lightgrey; width: 70%; margin: auto; padding: 2em">
 
-          <table style="width: 100%">
+              <hr />
 
-            <thead>
+              <a class="btn btn-secondary" href="/shop.html">Continue Shopping</a>
 
-              <tr>
+              <button class="btn btn-danger" onclick="localStorage.setItem('basket', '[]');">Clear Basket</button>
 
-                <th>Movie</th>
 
-                <th>Time</th>
-
-                <th>Price</th>
-
-              </tr>
-
-            </thead>
-
-            <tbody id="basket"></tbody>
-
-          </table>
-
-          <hr />
-
-          <div style="text-align: right"><strong>Total Price:</strong> £<span id="total-price"></span></div>
-
-          <hr />
-
-          <a href="">Continue Shopping</a>
-
-          <button onclick="localStorage.setItem('basket', '[]');">Clear Basket</button>
-
-          <a href="/order.html">Go to payment details</a>
-
+            </div>
         </div>
 
-      </article>
+        <div id="basket-sidebar" class="col-4">
+            <h2>Order Summary</h2>
+            <table style="width: 100%">
+
+            <tbody id="total"></tbody>
+
+          </table>
+          <div style="text-align: right"><strong>Total Price:</strong> £<span id="total-price"></span></div>
+          <a class="btn btn-primary" style="width: 100%" href="/order.html">Pay</a>
+        </div>
+
+      </div>
 
     </div>
 
@@ -69,6 +66,7 @@
   <script>
 
     const basketContainer = document.getElementById("basket");
+    const totalContainer = document.getElementById("total");
 
 
 
@@ -81,34 +79,43 @@
 
 
     basket.forEach((basketItem) => {
+      var cost = basketItem.price * basketItem.rentDays;
 
-      basketContainer.insertAdjacentHTML(
-
+      totalContainer.insertAdjacentHTML(
         "beforeend",
-
         `
-
             <tr>
 
                 <td>${basketItem.name}</td>
 
-                <td>${basketItem.rentDays}</td>
-
-                <td>${basketItem.price * basketItem.rentDays}</td>
+                <td>£${Math.round(cost*100) / 100}</td>
 
             </tr>
-
         `
-
       );
+      basketContainer.insertAdjacentHTML(
+        "beforeend",
+        `
+            <tr>
 
+                <td>
+                    <img style="display: inline" width="10%" src="${basketItem.image}"></img>
+                    <p style="display: inline">${basketItem.name}</p>
+                <td>
+                <td>${basketItem.rentDays}</td>
+
+                <td>£${Math.round(cost*100) / 100}</td>
+
+            </tr>
+        `
+      );
       totalPrice += basketItem.price * basketItem.rentDays;
 
     });
 
 
 
-    document.getElementById("total-price").textContent = totalPrice * 1.2;
+    document.getElementById("total-price").textContent = Math.round((totalPrice * 1.2)*100)/100;
 
   </script>
 

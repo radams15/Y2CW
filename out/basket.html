@@ -43,6 +43,31 @@
 
     <header>
 
+<meta charset="UTF-8" />
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<link href="/styles/main.css" rel="stylesheet" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+
+<link
+
+  href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&amp;display=swap"
+
+  rel="stylesheet"
+
+/>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
 
       <strong>Movie Rentals</strong>
@@ -53,91 +78,83 @@
 
 
 
-    <div id="main">
+    <div class="container-fluid">
+
+      <div class="row">
+
+        <div class="col-8">
+
+            <h1 style="text-align: center">Basket</h1>
 
 
 
-      <article>
+            <div>
+
+            <table style="width: 100%">
+
+                <tr>
+
+                    <th> Details </th>
+
+                    <th> Quantity </th>
+
+                    <th> Price </th>
+
+                </tr>
+
+                <tbody id="basket"></tbody>
 
 
 
-        <h1 style="text-align: center">Basket</h1>
+              </table>
 
 
 
-        <div style="background-color: lightgrey; width: 70%; margin: auto; padding: 2em">
+
+
+              <hr />
 
 
 
-          <table style="width: 100%">
+              <a class="btn btn-secondary" href="/shop.html">Continue Shopping</a>
 
 
 
-            <thead>
+              <button class="btn btn-danger" onclick="localStorage.setItem('basket', '[]');">Clear Basket</button>
 
 
 
-              <tr>
 
 
-
-                <th>Movie</th>
-
-
-
-                <th>Time</th>
-
-
-
-                <th>Price</th>
-
-
-
-              </tr>
-
-
-
-            </thead>
-
-
-
-            <tbody id="basket"></tbody>
-
-
-
-          </table>
-
-
-
-          <hr />
-
-
-
-          <div style="text-align: right"><strong>Total Price:</strong> £<span id="total-price"></span></div>
-
-
-
-          <hr />
-
-
-
-          <a href="">Continue Shopping</a>
-
-
-
-          <button onclick="localStorage.setItem('basket', '[]');">Clear Basket</button>
-
-
-
-          <a href="/order.html">Go to payment details</a>
-
-
+            </div>
 
         </div>
 
 
 
-      </article>
+        <div id="basket-sidebar" class="col-4">
+
+            <h2>Order Summary</h2>
+
+            <table style="width: 100%">
+
+
+
+            <tbody id="total"></tbody>
+
+
+
+          </table>
+
+          <div style="text-align: right"><strong>Total Price:</strong> £<span id="total-price"></span></div>
+
+          <a class="btn btn-primary" style="width: 100%" href="/order.html">Pay</a>
+
+        </div>
+
+
+
+      </div>
 
 
 
@@ -163,6 +180,8 @@
 
     const basketContainer = document.getElementById("basket");
 
+    const totalContainer = document.getElementById("total");
+
 
 
 
@@ -187,19 +206,15 @@
 
     basket.forEach((basketItem) => {
 
+      var cost = basketItem.price * basketItem.rentDays;
 
 
-      basketContainer.insertAdjacentHTML(
 
-
+      totalContainer.insertAdjacentHTML(
 
         "beforeend",
 
-
-
         `
-
-
 
             <tr>
 
@@ -209,25 +224,47 @@
 
 
 
-                <td>${basketItem.rentDays}</td>
-
-
-
-                <td>${basketItem.price * basketItem.rentDays}</td>
+                <td>£${Math.round(cost*100) / 100}</td>
 
 
 
             </tr>
 
-
-
         `
-
-
 
       );
 
+      basketContainer.insertAdjacentHTML(
 
+        "beforeend",
+
+        `
+
+            <tr>
+
+
+
+                <td>
+
+                    <img style="display: inline" width="10%" src="${basketItem.image}"></img>
+
+                    <p style="display: inline">${basketItem.name}</p>
+
+                <td>
+
+                <td>${basketItem.rentDays}</td>
+
+
+
+                <td>£${Math.round(cost*100) / 100}</td>
+
+
+
+            </tr>
+
+        `
+
+      );
 
       totalPrice += basketItem.price * basketItem.rentDays;
 
@@ -241,7 +278,7 @@
 
 
 
-    document.getElementById("total-price").textContent = totalPrice * 1.2;
+    document.getElementById("total-price").textContent = Math.round((totalPrice * 1.2)*100)/100;
 
 
 
