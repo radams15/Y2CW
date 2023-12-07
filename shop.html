@@ -83,6 +83,7 @@
             movie.rentDays = parseInt(document.getElementById("days-to-rent-" + movieId).value);
             basket.push(movie);
             localStorage.setItem("basket", JSON.stringify(basket));
+            reloadBasket();
         }
         
         layout();

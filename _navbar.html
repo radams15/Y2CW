@@ -1,10 +1,10 @@
  <nav class="navbar navbar-static-top navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid ">
-        <a class="navbar-brand" href="#">Movie Rentals</a>
+        <a class="navbar-brand" href="/shop.html">Movie Rentals</a>
         <ul class="navbar-nav mr-auto">
 
             <li class="nav-item">
-                <a class="nav-link"  href="/basket.html">Basket <i class="bi bi-basket"></i></a>
+                <a class="nav-link"  href="/basket.html">Basket (<span id="totalItems"></span>) <i class="bi bi-basket"></i></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/login.html">Log Out</a>
@@ -12,3 +12,11 @@
         </ul>
     </div>
   </nav>
+
+<script>
+    function reloadBasket() {
+        var totalItems = JSON.parse(localStorage.getItem("basket") ?? "[]").length;
+        document.getElementById('totalItems').innerHTML = totalItems;
+    }
+    reloadBasket();
+</script>
